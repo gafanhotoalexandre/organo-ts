@@ -15,7 +15,7 @@ export function Time({
   const css = { backgroundColor: corSecundaria };
 
   return (
-    (colaboradores.length > 0) && (
+    (colaboradores.length > 0) ? (
       <section className="time" style={css}>
         <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
 
@@ -31,6 +31,6 @@ export function Time({
           ))}
         </div>
       </section>
-    )
+    ) : <></>
   );
 }

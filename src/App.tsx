@@ -3,6 +3,7 @@ import { Banner } from './components/Banner'
 import { Formulario } from './components/Formulario'
 import { Rodape } from './components/Rodape';
 import { Time } from './components/Time';
+import { IColaborador } from './interface/IColaborador';
 
 function App() {
 
@@ -51,9 +52,9 @@ function App() {
     },
   ];
 
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState<IColaborador[]>([]);
 
-  function aoNovoColaboradorAdicionado(colaborador) {
+  function aoNovoColaboradorAdicionado(colaborador: IColaborador) {
     setColaboradores([...colaboradores, colaborador]);
   }
 
