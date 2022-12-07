@@ -1,5 +1,6 @@
 # Organo
 
-Projeto para voltar à prática..
+> Status: Em desenvolvimento...
 
-Desenvolvido com React (JavaScript)
+Migrando o projeto Organo para TypeScript
+
