@@ -1,17 +1,25 @@
 import { useState } from 'react';
+import { IColaborador } from '../../interface/IColaborador';
 import { Botao } from '../Botao';
 import { ListaSuspensa } from '../ListaSuspensa';
 import { TextField } from '../TextField';
 import './Formulario.css'
 
-export function Formulario({ aoColaboradorCadastrado, nomesDosTimes }) {
+interface FormularioProps{
+  aoColaboradorCadastrado: (colaborador: IColaborador) => void;
+  nomesDosTimes: string[];
+}
+
+export function Formulario({
+  aoColaboradorCadastrado, nomesDosTimes
+}: FormularioProps) {
 
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
   const [imagem, setImagem] = useState('');
   const [time, setTime] = useState('');
 
-  function handleForm(event) {
+  function handleForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     aoColaboradorCadastrado({
       nome, cargo, imagem, time
@@ -55,6 +63,7 @@ export function Formulario({ aoColaboradorCadastrado, nomesDosTimes }) {
           times={nomesDosTimes}
           valor={time}
           aoAlterado={valor => setTime(valor)}
+          required={true}
         />
 
         <Botao>Criar card</Botao>

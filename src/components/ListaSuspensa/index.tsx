@@ -5,10 +5,11 @@ interface ListaSuspensaProps {
   times: string[];
   valor: string;
   aoAlterado: (e: string) => void;
+  required?: boolean;
 }
 
 export function ListaSuspensa({
-  label, times, valor, aoAlterado
+  label, times, valor, aoAlterado, required = false
 }: ListaSuspensaProps) {
   return (
     <div className="lista-suspensa">

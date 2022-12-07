@@ -5,11 +5,11 @@ interface TextFieldProps {
   placeholder: string;
   valor: string;
   aoAlterado: (valorDoCampo: string) => void;
-  required: boolean;
+  required?: boolean;
 }
 
 export function TextField({
-  label, placeholder, valor, aoAlterado, required
+  label, placeholder, valor, aoAlterado, required = false
 }: TextFieldProps ) {
 
   return (
