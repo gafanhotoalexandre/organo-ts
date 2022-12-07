@@ -6,17 +6,18 @@ interface TextFieldProps {
   valor: string;
   aoAlterado: (valorDoCampo: string) => void;
   required?: boolean;
+  tipo?: 'text' | 'number' | 'email' | 'password' | 'date'
 }
 
 export function TextField({
-  label, placeholder, valor, aoAlterado, required = false
+  label, placeholder, valor, aoAlterado, required = false, tipo = 'text'
 }: TextFieldProps ) {
 
   return (
     <div className="text-field">
       <label>{label}:</label>
       <input
-        type="text"
+        type={tipo}
         placeholder={placeholder}
         onChange={(e) => aoAlterado(e.target.value)}
         value={valor}

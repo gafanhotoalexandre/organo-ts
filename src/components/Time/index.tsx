@@ -20,12 +20,13 @@ export function Time({
         <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
 
         <div className="colaboradores">
-          {colaboradores.map(({ nome, cargo, imagem }, index) => (
+          {colaboradores.map(({ nome, cargo, imagem, data }, index) => (
             <Colaborador
               key={index}
               nome={nome}
               cargo={cargo}
               imagem={imagem}
+              data={data}
               corDeFundo={corPrimaria}
             />
           ))}

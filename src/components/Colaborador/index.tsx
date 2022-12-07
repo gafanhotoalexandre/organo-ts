@@ -4,11 +4,12 @@ interface ColaboradorProps {
   nome: string;
   cargo: string;
   imagem: string;
+  data: string;
   corDeFundo: string;
 }
 
 export function Colaborador({
-  nome, cargo, imagem, corDeFundo
+  nome, cargo, imagem, data, corDeFundo
 }: ColaboradorProps ) {
   return (
     <div className="colaborador">
@@ -19,6 +20,7 @@ export function Colaborador({
       <div className="rodape">
         <h4>{nome}</h4>
         <h5>{cargo}</h5>
+        <h5>{data}</h5>
       </div>
     </div>
   );

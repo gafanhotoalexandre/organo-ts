@@ -17,17 +17,19 @@ export function Formulario({
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
   const [imagem, setImagem] = useState('');
+  const [data, setData] = useState('');
   const [time, setTime] = useState('');
 
   function handleForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     aoColaboradorCadastrado({
-      nome, cargo, imagem, time
+      nome, cargo, imagem, data, time
     });
     // clear form
     setNome('');
     setCargo('');
     setImagem('');
+    setData('')
     setTime('');
   }
 
@@ -57,6 +59,14 @@ export function Formulario({
           placeholder={'Informe o endereço da imagem'}
           valor={imagem}
           aoAlterado={valor => setImagem(valor)}
+        />
+        <TextField
+          label={'Data da entrada no time'}
+          placeholder={''}
+          valor={data}
+          aoAlterado={valor => setData(valor)}
+          tipo={'date'}
+          required={true}
         />
         <ListaSuspensa
           label={'Time'}
