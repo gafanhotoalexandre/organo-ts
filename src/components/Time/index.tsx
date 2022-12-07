@@ -1,7 +1,17 @@
+import { IColaborador } from '../../interface/IColaborador';
 import { Colaborador } from '../Colaborador';
 import './Time.css';
 
-export function Time({ nome, corPrimaria, corSecundaria, colaboradores }) {
+interface TimeProps {
+  nome: string;
+  corPrimaria: string;
+  corSecundaria: string;
+  colaboradores: IColaborador[]
+}
+
+export function Time({
+  nome, corPrimaria, corSecundaria, colaboradores
+}: TimeProps ) {
   const css = { backgroundColor: corSecundaria };
 
   return (
@@ -10,7 +20,7 @@ export function Time({ nome, corPrimaria, corSecundaria, colaboradores }) {
         <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
 
         <div className="colaboradores">
-          {colaboradores.map(({nome, cargo, imagem}, index) => (
+          {colaboradores.map(({ nome, cargo, imagem }, index) => (
             <Colaborador
               key={index}
               nome={nome}
