@@ -1,0 +1,15 @@
+footer.rodape {
+  align-items: center;
+  background: url('images/fundo.png') #6278F7;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  padding: 80px;
+}
+
+footer.rodape ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 32px;
+}
