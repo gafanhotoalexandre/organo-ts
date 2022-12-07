@@ -1,6 +1,15 @@
 import './ListaSuspensa.css';
 
-export function ListaSuspensa({ label, times, valor, aoAlterado }) {
+interface ListaSuspensaProps {
+  label: string;
+  times: string[];
+  valor: string;
+  aoAlterado: (e: string) => void;
+}
+
+export function ListaSuspensa({
+  label, times, valor, aoAlterado
+}: ListaSuspensaProps) {
   return (
     <div className="lista-suspensa">
       <label>{label}:</label>
